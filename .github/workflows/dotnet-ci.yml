@@ -23,7 +23,14 @@ jobs:
         run: dotnet restore ./Pruebas.sln
 
       - name: Compilar solución
-        run: dotnet build ./Pruebas.sln --configuration Release
+        run: dotnet build ./Pruebas.sln --configuration Release --no-restore
 
       - name: Ejecutar pruebas unitarias
-        run: dotnet test ./UnitTestProject1/UnitTestProject1.csproj --no-build --verbosity normal
+        run: dotnet test ./UnitTestProject1/UnitTestProject1.csproj --no-build --configuration Release --logger "trx;LogFileName=test_results.trx"
+
+      - name: Subir resultados de pruebas
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: ResultadosTest
+          path: '**/TestResults/*.trx'
