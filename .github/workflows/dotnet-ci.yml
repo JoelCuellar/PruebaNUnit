@@ -1,0 +1,29 @@
+name: CI .NET - Pruebas NUnit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restaurar dependencias
+        run: dotnet restore ./Pruebas.sln
+
+      - name: Compilar solución
+        run: dotnet build ./Pruebas.sln --configuration Release
+
+      - name: Ejecutar pruebas unitarias
+        run: dotnet test ./UnitTestProject1/UnitTestProject1.csproj --no-build --verbosity normal

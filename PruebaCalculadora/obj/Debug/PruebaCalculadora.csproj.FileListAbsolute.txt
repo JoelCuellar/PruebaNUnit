@@ -1,0 +1,7 @@
+D:\VisualStudio\PruebaCalculadora\bin\Debug\PruebaCalculadora.exe.config
+D:\VisualStudio\PruebaCalculadora\bin\Debug\PruebaCalculadora.exe
+D:\VisualStudio\PruebaCalculadora\bin\Debug\PruebaCalculadora.pdb
+D:\VisualStudio\PruebaCalculadora\obj\Debug\PruebaCalculadora.csproj.AssemblyReference.cache
+D:\VisualStudio\PruebaCalculadora\obj\Debug\PruebaCalculadora.csproj.CoreCompileInputs.cache
+D:\VisualStudio\PruebaCalculadora\obj\Debug\PruebaCalculadora.exe
+D:\VisualStudio\PruebaCalculadora\obj\Debug\PruebaCalculadora.pdb
